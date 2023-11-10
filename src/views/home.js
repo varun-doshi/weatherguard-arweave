@@ -2,14 +2,24 @@ import React from "react";
 
 import { Helmet } from "react-helmet";
 import FeatureCard from "../components/feature-card";
+import Question from "../components/question";
 import "./home.css";
 
 const Home = (props) => {
+  const scrollTo = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    element.scrollIntoView({
+      block: "start",
+      behavior: "smooth", // smooth scroll
+    });
+  };
+
   return (
     <div className="home-container">
       <Helmet>
-        <title>Superb Silent Hamster</title>
-        <meta property="og:title" content="Superb Silent Hamster" />
+        <title>WeatherGuard</title>
+        <meta property="og:title" content="WeatherGuard" />
       </Helmet>
       <div className="home-header">
         <header data-thq="thq-navbar" className="home-navbar-interactive">
@@ -17,20 +27,43 @@ const Home = (props) => {
           <div data-thq="thq-navbar-nav" className="home-desktop-menu">
             <nav className="home-links">
               <button
-                onClick={() => window.location.replace("/#details")}
                 className="home-nav2"
+                onClick={(e) => {
+                  scrollTo(e, "details");
+                }}
               >
                 About
               </button>
               <button
-                onClick={() => window.location.replace("/#features")}
                 className="home-nav3"
+                onClick={(e) => {
+                  scrollTo(e, "features");
+                }}
               >
                 Features
               </button>
+
               <button
-                onClick={() => window.location.replace("/#contact")}
                 className="home-nav4"
+                onClick={(e) => {
+                  scrollTo(e, "arch");
+                }}
+              >
+                Architecture
+              </button>
+              <button
+                className="home-nav5"
+                onClick={(e) => {
+                  scrollTo(e, "workflow");
+                }}
+              >
+                Workflow
+              </button>
+              <button
+                className="home-nav3"
+                onClick={(e) => {
+                  scrollTo(e, "contact");
+                }}
               >
                 Contact
               </button>
@@ -65,10 +98,10 @@ const Home = (props) => {
                   Features
                 </button>
                 <button
-                  onClick={() => window.location.replace("/#contact")}
+                  // onClick={() => window.location.replace("/#contact")}
                   className="home-nav41"
                 >
-                  Contact
+                  <a href="#contact">Contact</a>
                 </button>
               </nav>
               <div className="home-buttons1">
@@ -97,31 +130,33 @@ const Home = (props) => {
               WeatherGuard: Decentralized Weather Insurance
             </h1>
             <div className="home-btn-group">
-              {/* <button className="home-hero-button1 button">Get Started</button> */}
               <button
-                onClick={() => window.location.replace("/#details")}
+                onClick={(e) => {
+                  scrollTo(e, "details");
+                }}
                 className="home-hero-button1 button"
               >
                 Learn More ⬇
               </button>
             </div>
           </div>
-          {/* <img src="/arweave.png" alt="image" className="home-image" /> */}
         </div>
       </div>
       <div id="details" className="home-details">
         <div className="home-details1">
           <div className="home-container02">
             <span className="home-text sectionTitle">
-              <span>How it works</span>
+              <span>About</span>
               <br></br>
             </span>
             <h2 className="home-details-heading heading2">
               Fully-automated Decentralized Weather Insurance
             </h2>
             <span className="home-details-sub-heading">
-              Real-time decentralized oracles provide up-to-the-minute weather
-              information, ensuring accurate and timely claims processing.
+              Immutable contracts on Arweave network provide fraud-free
+              insurance services. Real-time decentralized oracles provide
+              up-to-the-minute weather information, ensuring accurate and timely
+              claims processing.
             </span>
           </div>
           <img alt="image" src="arweave.png" className="home-details-image" />
@@ -143,7 +178,7 @@ const Home = (props) => {
             <div className="home-container04">
               <FeatureCard
                 Heading="Transparent Policies"
-                SubHeading="Access and review insurance policies on an immutable blockchain. No hidden clauses or surprise exclusions."
+                SubHeading="Access and review insurance policies on Arweave network. No hidden clauses or surprise exclusions."
                 Image="policy.png"
               ></FeatureCard>
               <FeatureCard
@@ -159,10 +194,128 @@ const Home = (props) => {
                 Image="process.png"
               ></FeatureCard>
               <FeatureCard
-                Heading="Personalized Coverage"
-                SubHeading="Tailor your policy to your specific needs and location. Choose from a range of coverage options for different weather events."
+                Heading="Policy Selection"
+                SubHeading="Choose from a wide range of predefined insurance policies to maximize your claims"
                 Image="personalized.png"
               ></FeatureCard>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="arch" className="home-banner">
+        <div className="home-banner1">
+          <h1 className="home-banner-heading heading2">
+            Proposed Architecture
+          </h1>
+          <span className="home-banner-sub-heading">
+            Here is my proposed architecture leveraging Smartweave network and
+            Chainlink oracles and automation to provide a truly fraud-proof and
+            decentralized weather insurance service
+          </span>
+          <img src="architecture.png" alt="Architecture" />
+        </div>
+      </div>
+      <div id="workflow" className="home-faq">
+        <div className="home-faq-container">
+          <div className="home-faq1">
+            <div className="home-container06">
+              <span className="home-text06 sectionTitle">
+                <span>FAQ</span>
+                <br></br>
+              </span>
+              <h2 className="home-text09 heading2">How does it work?</h2>
+              <span className="home-text10">
+                {/* <span>
+                  Here are some of the most common questions that we get.
+                </span> */}
+                <br></br>
+                <span>
+                  <span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                  </span>
+                  <span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                  </span>
+                  <span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: " ",
+                        }}
+                      />
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div className="home-container07">
+              <Question
+                Answer="Leveraging the power of lazy-evaluation in SmartWeave, clients can ensure fraud-free transactions for themselves on the Arweave network. Namely 2 contract- A main contract which holds all the policy creation,assignment and verifying logic and another contract which mints NFTs for claimed policies"
+                Question="The WeatherGuard Smart Contracts are deployed on the Arweave Network."
+              ></Question>
+              <Question
+                Answer="The client must pay the insurance amount in $AR tokens. This process can be automated using Chainlink automation to pay the amount according to the duration choosen."
+                Question="The client selects an insurance policy and pays the amount in $AR tokens"
+              ></Question>
+              <Question
+                Answer="Chainlink oracles will help provide decentralized and immutable data regarding weather conditions of choosen region. Hence, client need not worry about any manipulation of data."
+                Question="Immutable and decentralized data"
+              ></Question>
+              <Question
+                Answer="On claiming your insurance, the contract will fetch data from the oracles to verify if the claim meets the conditions. If so, the policy return amount will be paid back in $AR tokens along with an NFT signifying acquiring of claim and closing the client's policy"
+                Question="Insurance Claims"
+              ></Question>
             </div>
           </div>
         </div>
@@ -173,23 +326,44 @@ const Home = (props) => {
             <span className="home-logo2">WEATHERGUARD</span>
             <nav className="home-nav1 home-nav1">
               <button
-                onClick={() => window.location.replace("/#home")}
                 className="home-nav12"
+                onClick={(e) => {
+                  scrollTo(e, "home");
+                }}
               >
                 Home
               </button>
               <button
-                onClick={() => window.location.replace("/#details")}
                 className="home-nav22"
+                onClick={(e) => {
+                  scrollTo(e, "details");
+                }}
               >
                 About
               </button>
-
               <button
-                onClick={() => window.location.replace("/#features")}
                 className="home-nav32"
+                onClick={(e) => {
+                  scrollTo(e, "features");
+                }}
               >
                 Features
+              </button>
+              <button
+                className="home-nav42"
+                onClick={(e) => {
+                  scrollTo(e, "arch");
+                }}
+              >
+                Architecture
+              </button>
+              <button
+                className="home-nav52"
+                onClick={(e) => {
+                  scrollTo(e, "workflow");
+                }}
+              >
+                Workflow
               </button>
             </nav>
           </div>

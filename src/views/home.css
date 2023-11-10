@@ -357,9 +357,10 @@
 }
 .home-details-sub-heading {
   color: var(--dl-color-gray-800);
-  font-size: 18px;
+  font-size: 22px;
   text-align: left;
   line-height: 1.6;
+  width: 750px;
   margin-bottom: var(--dl-space-space-twounits);
 }
 .home-details-image {
