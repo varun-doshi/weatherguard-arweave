@@ -26,6 +26,7 @@ const Home = (props) => {
           <span className="home-logo">WEATHERGUARD</span>
           <div data-thq="thq-navbar-nav" className="home-desktop-menu">
             <nav className="home-links">
+              a
               <button
                 className="home-nav2"
                 onClick={(e) => {
@@ -42,7 +43,6 @@ const Home = (props) => {
               >
                 Features
               </button>
-
               <button
                 className="home-nav4"
                 onClick={(e) => {

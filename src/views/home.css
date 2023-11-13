@@ -483,7 +483,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--dl-color-gray-black);
+  /* background-color: var(--dl-color-gray-black); */
+  background-color: #111;
 }
 .home-banner1 {
   gap: var(--dl-space-space-oneandhalfunits);
